@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/20c5629a29.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <style>
+        .navbar {
+            background-image: linear-gradient(#67C6E3, #FF8E8F);
+        }
+        
+        .nav-heading {
+            font-family: "monoton";
+            font-size: 30px;
+            font-weight: 500;
+            padding-right: 10px;
+            padding-left: 10px;
+            font-style: italic;
+        }
+        
+        .X-element {
+            font-family: "monoton";
+            font-size: 35px;
+            font-weight: 500;
+            padding-right: 10px;
+        
+        }
+        
+        .banner-section-bg-container {
+            background-image: url("https://img.freepik.com/free-vector/man-weight-lifting-with-sports-elements_24877-50736.jpg?t=st=1710604324~exp=1710607924~hmac=b1efa30203c47568518b2e9bb2e224f02a72e8a26dd8294ec3fb246da634be2e&w=740");
+            background-size: cover;
+        
+        }
+        
+        .welcome-home-page {
+            font-family: "Lobster";
+            font-size: 50px;
+            font-weight: 500;
+        
+            color: #E5E1DA;
+            text-align: center;
+        }
+        
+        .home-page-paragraph {
+            font-family: "roboto";
+            font-size: 30px;
+            font-weight: 1000;
+            font-style: bold;
+            color: #030637;
+            text-align: center;
+            font-style: italic;
+        
+        }
+        
+        .button-container {
+            background-color: #98E4FF;
+        
+        }
+        
+        .home-paragragh-container {
+        
+            background-color: #67C6E3;
+            opacity: .9;
+        
+            width: 85vw;
+            border-radius: 30px;
+            border-style: bold;
+            border-color: #E6BAA3;
+            padding: 20px;
+        }
+        
+        .loginpage-container {
+            background-color: #DFF5FF;
+        
+        }
+        
+        .signup-button {
+            color: white;
+            background-color: #401F71;
+            width: 130px;
+            height: 45px;
+            border-width: 0;
+            border-radius: 8px;
+            margin-right: 10px;
+        }
+        
+        
+        .body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        
+        .form-container {
+            width: 350px;
+            height: 550px;
+            background-color: #DFF5FF;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 10px;
+            box-sizing: border-box;
+            padding: 20px 30px;
+        }
+        
+        .title {
+            text-align: center;
+            font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+                "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+            margin: 10px 0 30px 0;
+            font-size: 28px;
+            font-weight: 800;
+        }
+        
+        .sub-title {
+            margin: 0;
+            margin-bottom: 5px;
+            font-size: 9px;
+            font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+                "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        }
+        
+        .form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin-bottom: 15px;
+        }
+        
+        .input {
+            border-radius: 20px;
+            border: 1px solid #c0c0c0;
+            outline: 0 !important;
+            box-sizing: border-box;
+            padding: 12px 15px;
+        }
+        
+        .form-btn {
+            padding: 10px 15px;
+            font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+                "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+            border-radius: 20px;
+            border: 0 !important;
+            outline: 0 !important;
+            background: teal;
+            color: white;
+            cursor: pointer;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        
+        .form-btn:active {
+            box-shadow: none;
+        }
+        
+        .sign-up-label {
+            margin: 0;
+            font-size: 10px;
+            color: #747474;
+            font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+                "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        }
+        
+        .sign-up-link {
+            margin-left: 1px;
+            font-size: 11px;
+            text-decoration: underline;
+            text-decoration-color: teal;
+            color: teal;
+            cursor: pointer;
+            font-weight: 800;
+        }
+        
+        .buttons-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin-top: 20px;
+            gap: 15px;
+        }
+        
+        .apple-login-button,
+        .google-login-button {
+            border-radius: 20px;
+            box-sizing: border-box;
+            padding: 10px 15px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+                rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+                "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+            font-size: 11px;
+            gap: 5px;
+        }
+        
+        .apple-login-button {
+            background-color: #DFF5FF;
+            color: #fff;
+            border: 2px solid #000;
+        }
+        
+        .google-login-button {
+            border: 2px solid #747474;
+        }
+        
+        .apple-icon,
+        .google-icon {
+            font-size: 18px;
+            margin-bottom: 1px;
+        }
+        
+        
+        
+        .body1 {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        
+        .form-container {
+            width: 350px;
+            background-color: #fff;
+            padding: 32px 24px;
+            font-size: 14px;
+            font-family: inherit;
+            color: #212121;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.084), 0px 2px 3px rgba(0, 0, 0, 0.168);
+        }
+        
+        .form-container button:active {
+            scale: 0.95;
+        }
+        
+        .form-container .logo-container {
+            margin-bottom: 12px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 20px;
+        }
+        
+        .form-container .social-buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+        
+        .form-container .social-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            font-family: inherit;
+            color: #fff;
+            border: none;
+            padding: 12px 16px;
+            gap: 8px;
+            cursor: pointer;
+            border-radius: 6px;
+            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.084), 0px 2px 3px rgba(0, 0, 0, 0.168);
+        }
+        
+        .form-container .social-button svg {
+            width: 22px;
+            height: 22px;
+            fill: white;
+        }
+        
+        .form-container .social-button.facebook {
+            background-color: #1778f2;
+        }
+        
+        .form-container .social-button.apple {
+            background-color: #212121;
+        }
+        
+        .form-container .form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .form-container .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        
+        .form-container .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .form-container .form-group input[type="text"],
+        .form-container .form-group input[type="password"] {
+            width: 90%;
+            padding: 12px 16px;
+            border-radius: 6px;
+            font-family: inherit;
+            border: 1px solid #ccc;
+        }
+        
+        .form-container .form-group input::placeholder {
+            opacity: 0.5;
+        }
+        
+        .form-container .form-group input[type="text"]:focus,
+        .form-container .form-group input[type="password"]:focus {
+            outline: none;
+            border-color: #1778f2;
+        }
+        
+        .form-container .form-submit-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: inherit;
+            color: #fff;
+            background-color: #212121;
+            border: none;
+            width: 100%;
+            padding: 12px 16px;
+            font-size: inherit;
+            gap: 8px;
+            margin: 12px 0;
+            cursor: pointer;
+            border-radius: 6px;
+            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.084), 0px 2px 3px rgba(0, 0, 0, 0.168);
+        }
+        
+        .form-container .form-submit-btn:hover {
+            background-color: #313131;
+        }
+        
+        .form-container .link {
+            color: #1778f2;
+            text-decoration: none;
+        }
+        
+        .form-container .forgot-password-link {
+            align-self: flex-end;
+            margin-top: -20px;
+        }
+        
+        .form-container .signup-link {
+            align-self: center;
+            font-weight: 500;
+        }
+        
+        .form-container .signup-link .link {
+            font-weight: 400;
+        }
+        
+        .form-container .link:hover {
+            text-decoration: underline;
+        }
+        
+        .form-container .line {
+            width: 100%;
+            height: 1px;
+            background-color: #212121;
+            opacity: 0.1;
+        }
+        
+        
+        .live-data-bg-container {
+            background-image: linear-gradient(#BBE2EC, #40A2E3);
+        }
+        
+        .live-heading {
+            color: #5E1675;
+            font-family: "bree Serif";
+            font-size: 30px;
+            font-style: italic;
+            font-weight: 1000;
+        }
+        
+        .oxygen-heading {
+            color: #0D9276;
+        }
+        
+        .pulse-heading {
+            color: #D24545;
+        }
+        
+        .temp-heading {
+            color: #503C3C;
+        }
+        
+        .fitx {
+            font-family: "monoton";
+            font-size: 35px;
+            font-weight: 500;
+            padding-right: 10px;
+        }
+        
+        .check-button {
+            height: 5vh;
+            width: 20vw;
+            text-align: center;
+            background-color: #176B87;
+            color: white;
+            font-size: 18px;
+            font-family: "roboto";
+            border-radius: 10px;
+            border-width: 0px;
+        }
+        
+        .time-heading {
+            color: #11235A;
+            font-size: 26px;
+            font-family: "roboto";
+            font-style: bold;
+            font-weight: 1000;
+        }
+        
+        .time-container {
+            height: 20vh;
+        
+            background-color: #5272F2;
+        }
+        
+        .time-input {
+            height: 5vh;
+            background-color: #B4D4FF;
+            border-radius: 8px;
+            border-width: 4px;
+            border-color: #F2AFEF;
+        }
+        
+        .oxygen-container {
+            background-color: #9ADE7B;
+            height: 20vh;
+            border-radius: 6px;
+            color: #0766AD;
+        
+        }
+        
+        .oxygen {
+            color: #0766AD;
+            font-size: 28px;
+            font-family: "roboto";
+            font-style: bold;
+            font-weight: 1000;
+        }
+        
+        .pulse-container {
+            background-color: #FF8F8F;
+            height: 20vh;
+            border-radius: 6px;
+        
+        }
+        
+        .pulse {
+            color: #363062;
+            font-size: 26px;
+            font-family: "roboto";
+            font-style: bold;
+            font-weight: 1000;
+        }
+        
+        .temp-container {
+            background-color: #B0926A;
+            height: 20vh;
+            border-radius: 6px;
+        
+        }
+        
+        .temperature {
+            color: #0C356A;
+            font-size: 26px;
+            font-family: "roboto";
+            font-style: bold;
+            font-weight: 1000;
+        }
+        
+        .colse-style {
+            font-size: 40px;
+        }
+        
+        
+        .bg-container {
+            background-color: #F7EEDD;
+        
+        }
+        
+        .about-heading {
+            color: #00224D;
+            font-family: "roboto";
+            font-size: 40px;
+            padding: 20px;
+            margin: 10px;
+            font-style: bold;
+            font-weight: 1000;
+        
+        
+        }
+        
+        .about-paragraph {
+            color: #430A5D;
+            font-family: "roboto";
+            font-size: 20px;
+            padding: 20px;
+            margin: 10px;
+        
+        }
+        
+        .vision-heading {
+            color: #5D0E41;
+            font-family: "Lobster";
+            font-size: 35px;
+            padding: 20px;
+            margin: 10px;
+            font-style: bold;
+            font-weight: 500;
+            text-decoration: underline;
+        }
+        
+        .vision-paragraph {
+            color: #5F374B;
+            font-family: "roboto";
+            font-size: 20px;
+            padding: 20px;
+            margin: 10px;
+        }
+        
+        .system-works-heading {
+            color: #5F5D9C;
+            font-family: "Lobster";
+            font-size: 35px;
+            padding: 20px;
+            margin: 10px;
+            font-style: bold;
+            font-weight: 500;
+            text-decoration: underline;
+        }
+        
+        .system-paragraph {
+            color: #333A73;
+            font-family: "roboto";
+            font-size: 20px;
+            padding: 20px;
+            margin: 10px;
+        }
+        
+        .integration-heading {
+            color: #211951;
+            font-family: "bree Serif";
+            font-size: 35px;
+            padding: 20px;
+            margin: 10px;
+            font-style: italic;
+            font-weight: 500;
+            text-decoration: underline;
+        
+        }
+        
+        .integration-para {
+            color: #280274;
+            font-family: "roboto";
+            font-size: 20px;
+            padding: 20px;
+            margin: 10px;
+        }
+        
+        .do-with-heading {
+            color: #211951;
+            font-family: "bree Serif";
+            font-size: 35px;
+            padding: 20px;
+            margin: 10px;
+            font-style: italic;
+            font-weight: 500;
+        }
+        
+        .FitX-heading1 {
+            color: #211951;
+            font-family: "monoton";
+            font-size: 35px;
+            font-style: italic;
+            font-weight: 500;
+        }
+        
+        .do-with-para {
+            color: #720455;
+            font-family: "roboto";
+            font-size: 20px;
+            padding: 20px;
+            margin: 10px;
+        }
+        
+        .contact-page {
+            background-color: #0d2436;
+        
+        }
+        
+        .contact-heading {
+            text-align: center;
+            color: white;
+            font-family: "Roboto";
+            font-size: 28px;
+            font-weight: 700;
+        }
+        
+        .footer-section-mail-id {
+            color: #959ead;
+            font-family: "Roboto";
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+    </style>
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand nav-heading" href="#">
+                Fit<span class="X-element">X</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-link active" id="navItem1" href="#Home">
+                        Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                    <a class="nav-link" href="#About" id="navItem2">About Us</a>
+                    <a class="nav-link" href="#contactus" id="navItem3">Contact Us</a>
+                    <a class="nav-link" href="#login" id="navItem4">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="banner-section-bg-container d-flex flex-column justify-content-center" id="Home">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="welcome-home-page mt-5 pt-4">Welcome to FitX!!</h1>
+                    <div class="home-paragragh-container m-3">
+                        <p class="home-page-paragraph">Our ultimate destination for cutting-edge fitness
+                            monitoring solutions! Say goodbye to generic fitness
+                            trackers and hello to personalized health insights tailored just for you.
+                            Our innovative system revolutionizes the way you approach your fitness journey,
+                            ensuring optimal performance, injury prevention, and overall well-being.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <script type="text/javascript" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/js/ccbp-ui-kit.js"></script>
+
+    </div>
+    <div class="bg-container" id="About">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="about-heading">About Us:</h2>
+                    <p class="about-paragraph">At FitX, we understand the critical need for real-time,
+                        personalized health monitoring in today's fitness landscape.
+                        Too often, gym trainees lack comprehensive insights into their
+                        physiological parameters, leaving them vulnerable to injuries or
+                        suboptimal performance. That's why we've developed a groundbreaking
+                        system that combines state-of-the-art sensors with advanced AI
+                        algorithms to deliver unparalleled accuracy and customization.</p>
+                    <h3 class="vision-heading">Our Vision:</h3>
+                    <p class="vision-paragraph">Our journey began with a vision to bridge the gap
+                        between generic fitness monitoring solutions and the
+                        dynamic needs of individuals engaged in intensive workout routines.
+                        Inspired by real-life tragedies like the untimely demise of fitness
+                        enthusiasts due to lack of personalized monitoring,
+                        we set out to create a solution that prioritizes user-specific
+                        data and intelligent feedback mechanisms.</p>
+                    <h4 class="system-works-heading">How our System Works???</h4>
+                    <p class="system-paragraph">Our system employs a network of cutting-edge sensors,
+                        including DS18B20 for temperature, MAX30100 for pulse oximetry,
+                        and the Muscle Bio Amp Candy for muscle contractions,
+                        to capture and analyze key health indicators in real-time.
+                        Powered by the Raspberry Pi microprocessor, our centralized
+                        hub ensures efficient data processing and transmission,
+                        seamlessly connecting with our user-friendly mobile application
+                        via MQTT communication.
+                    </p>
+                    <h5 class="integration-heading">Integration with AI!!</h5>
+                    <p class="integration-para">
+                        What sets us apart is our integration of a Linear Regression model,
+                        a sophisticated AI algorithm that analyzes user-specific data accumulated
+                        over a 100-day period. This model establishes personalized
+                        thresholds for essential health metrics,
+                        enabling proactive alerts and personalized recommendations
+                        tailored to each user's unique fitness journey.
+                        With FitX, you'll have a virtual health companion at your
+                        fingertips.</p>
+                    <h6 class="do-with-heading">Let's do with <span class="FitX-heading1">FitX</span>:</h6>
+
+                    <p class="do-with-para">Say hello to a smarter, safer, and more effective approach to
+                        fitness monitoring with FitX.Our user-friendly web application offers a seamless
+                        interface for monitoring progress, receiving personalized
+                        recommendations, and staying connected with your fitness goals. </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="contact-page d-flex flex-column justify-content-center" id="contactus">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="contact-heading">Contact Us</h1>
+                    <h1 class="footer-section-mail-id text-center">21EC91@kcgcollege.com</h1>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div>
+
+    </div>
+
+</body>
+
+</html>
